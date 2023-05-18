@@ -4,7 +4,7 @@ UniqueGen is an open-source package for Node.js, It enables generating random nu
 ## Installation
 To install UniqueGen, simply run the following command in your terminal:
 ```bash
-npm install uniquegen --save
+npm install uniquegen@latest --save
 ```
 
 ## Usage
