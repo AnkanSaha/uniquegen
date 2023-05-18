@@ -4,13 +4,12 @@ import {GenerateWordIDAsync, GenerateWordIDsync} from './Function/WordFunction';
 import {GenerateSymbolIDsync, GenerateSymbolIDAsync} from './Function/SymbolFunction'; // Import the Random Symbol Generator Function
 import {GenerateMixedIDAsync, GenerateMixedIDsync} from './Function/MixedFunction'; // Import the Random Mixed Generator Function
 
-// Global Types
+// Global Types for this file
 type num = number; // Type for number
 type str = string; // Type for string
 type bool = boolean; // Type for boolean
 
-
-// Global Interface
+// Global Interface for default export
 interface Generate {
     // Syncronous Functions
     randomNumberSync: (length: num) => num
@@ -38,4 +37,18 @@ const Generate: Generate = {
     randomMixedAsync: GenerateMixedIDAsync
 }
 
+//export named sync function for destructuring
+export const randomNumberSync = GenerateNumberIDsync
+export const randomWordSync = GenerateWordIDsync
+export const randomSymbolSync = GenerateSymbolIDsync
+export const randomMixedSync = GenerateMixedIDsync
+
+// export named async function for destructuring
+export const randomNumberAsync = GenerateNumberIDAsync
+export const randomWordAsync = GenerateWordIDAsync
+export const randomSymbolAsync = GenerateSymbolIDAsync
+export const randomMixedAsync = GenerateMixedIDAsync
+
+
+// Export the default function
 export default Generate; // Export the Function
