@@ -1,5 +1,5 @@
 # UniqueGen
-UniqueGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.
+UniqueGen is an open-source package for Node.js, It enables generating random numbers, alphanumeric and has a range of IDs.It offers flexibility and ease of use, making it a valuable tool for developers.
 
 ## Installation
 To install UniqueGen, simply run the following command in your terminal:
@@ -18,19 +18,19 @@ To generate a random number, use the following function:
 ```javascript first paramenter is the  length of the Number you want to generate
 UniqueGen.randomNumber(10);
 ```
-This will generate a random number with a length of 10 digits.
 
 ### Random Words
 To generate a random word, use the following function:
-```javascript
+```javascript first paramenter is the  length of the Word you want to generate
 UniqueGen.randomWord(10);
 
+```
+# Random Symbols
+To generate a random symbol, use the following function:
+```javascript first paramenter is the  length of the Symbol you want to generate
+UniqueGen.randomSymbol(10);
 
 ```
-This will generate a random word with a length of 10 characters.
-
-
-
 # Usage
 ```javascript
 const UniqueGen = require('uniquegen');
@@ -42,6 +42,9 @@ output: 1234567890
 
 UniqueGen.randomWord(10);
 output: aBcDeFgHiJ
+
+UniqueGen.randomSymbol(10);
+output: !@#$%^&*()_
 
 ```
 

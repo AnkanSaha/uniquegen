@@ -5,9 +5,14 @@ type num = number; // Type for number
 type str = string; // Type for string
 type globe = any; // Type for string
 
+
 /**
- * This TypeScript function generates a random 10-digit number ID.
- * @returns a randomly generated 10-digit number as a number data type.
+ * The function generates a random ID of a specified length using an array of numbers and the
+ * Math.random() method.
+ * @param {num} length - The length parameter is a number that determines the length of the generated
+ * ID. It is used to specify the number of rounds the while loop should run to generate the random ID.
+ * The value of this parameter is passed as an argument to the GenerateID function when it is called.
+ * @returns a randomly generated 10-digit number ID as a number data type.
  */
 export default function GenerateID(length:num):num {
    /* Creating an array of numbers from 0 to 9 that will be used to generate the random 10-digit number
@@ -46,4 +51,4 @@ export default function GenerateID(length:num):num {
     const FinalIDNumber: num = Number(FinalIDString); // Convert the String to Number
 
     return FinalIDNumber; // Return the Final ID
-}
+};
