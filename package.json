@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnkanSaha/RandoGen.git"
+    "url": "https://github.com/AnkanSaha/UniqueGen.git"
   },
   "keywords": [
     "UniqueGen",
@@ -23,7 +23,7 @@
   "author": "Ankan Saha <server@theankan.live>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AnkanSaha/RandoGen.git"
+    "url": "https://github.com/AnkanSaha/UniqueGen.git"
   },
   "displayName": "UniqueGen",
   "icon": "https://th.bing.com/th/id/OIP.mp8SPXPOGVDGGvKVnwyoiQHaHa?pid=ImgDet&rs=1",
