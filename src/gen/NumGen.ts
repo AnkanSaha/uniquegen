@@ -14,14 +14,7 @@ type globe = any; // Type for string
  * The value of this parameter is passed as an argument to the GenerateID function when it is called.
  * @returns a randomly generated 10-digit number ID as a number data type.
  */
-export default function GenerateID(length:num):num {
-   /* Creating an array of numbers from 0 to 9 that will be used to generate the random 10-digit number
-   ID. */
-    const Numbers: num[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; // All Possible Numbers to generate
-
-    /* The code is initializing two variables: `CountRound` and `FinalID`. */
-    // Number of Rounds
-    let CountRound :num = length; // Number of Rounds
+export default function GenerateNumber(length:num, Numbers:num[]):num {
 
     // Final ID Array
     let FinalID: num[] = []; // Final ID
@@ -33,12 +26,12 @@ export default function GenerateID(length:num):num {
    can be used to generate the ID. The selected number is then pushed to the `FinalID` array. After
    10 rounds, the `FinalID` array is joined into a string and converted to a number, which is then
    returned as the final ID. */
-    while (CountRound > 0) {
+    while (length > 0) {
         let TempRandomNumBer: num = Math.random() * (9 - 0) + 0; // Generate Random Number
         let FinalRandomNumber: num | globe = TempRandomNumBer.toFixed(); // Round the Number
         // Push the Number to Final ID Array
         FinalID.push(Numbers[FinalRandomNumber]); // Push the Number to Final ID
-        CountRound--; // Decrease the Number of Rounds
+        length--; // Decrease the Number of Rounds
     }
 
   /* This code block is converting the `FinalID` array, which contains the randomly generated 10-digit
