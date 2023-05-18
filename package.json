@@ -2,7 +2,8 @@
   "name": "randogen",
   "version": "1.0.2",
   "description": "RandoGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build":"tsc",
     "prepare": "npm run build",
@@ -10,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "fhtr"
+    "url": "https://github.com/AnkanSaha/RandoGen.git"
   },
   "keywords": [
     "RandoGen"
@@ -18,7 +19,7 @@
   "author": "Ankan Saha <server@theankan.live>",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/AnkanSaha/RandoGen.git"
   },
   "displayName": "RandoGen",
   "icon": "https://th.bing.com/th/id/OIP.mp8SPXPOGVDGGvKVnwyoiQHaHa?pid=ImgDet&rs=1",
@@ -28,7 +29,5 @@
   "publisher": "Ankan Saha",
   "maintainers": [
     "Ankan Saha" 
-  ],
-  "types": "index.d.ts",
-  "packageManager": "npm"
+  ]
 }
