@@ -18,26 +18,19 @@ To generate a random number, use the following function:
 ```javascript first paramenter is the  length of the Number you want to generate
 UniqueGen.randomNumber(10);
 ```
-This will generate a random number with a length of 10 digits.
 
 ### Random Words
 To generate a random word, use the following function:
-```javascript
+```javascript first paramenter is the  length of the Word you want to generate
 UniqueGen.randomWord(10);
 
+```
 # Random Symbols
 To generate a random symbol, use the following function:
-```javascript
+```javascript first paramenter is the  length of the Symbol you want to generate
 UniqueGen.randomSymbol(10);
-```
-This will generate a random symbol with a length of 10 characters.
-
 
 ```
-This will generate a random word with a length of 10 characters.
-
-
-
 # Usage
 ```javascript
 const UniqueGen = require('uniquegen');
