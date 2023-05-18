@@ -1,31 +1,49 @@
-# RandoGen
-RandoGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.
+# UniqueGen
+UniqueGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.
 
 ## Installation
-To install RandoGen, simply run the following command in your terminal:
+To install UniqueGen, simply run the following command in your terminal:
 ```bash
-npm install randogen --save
+npm install uniquegen --save
 ```
 
 ## Usage
-To use RandoGen, you must first import it into your project:
+To use UniqueGen, you must first import it into your project:
 ```javascript
-const randogen = require('randogen');
+const UniqueGen = require('uniquegen');
 ```
 
 ### Random Numbers
 To generate a random number, use the following function:
 ```javascript first paramenter is the  length of the Number you want to generate
-randogen.randomNumber(10);
+UniqueGen.randomNumber(10);
 ```
 This will generate a random number with a length of 10 digits.
 
 ### Random Words
 To generate a random word, use the following function:
 ```javascript
-randogen.randomWord();
+UniqueGen.randomWord(10);
+
+
 ```
 This will generate a random word with a length of 10 characters.
+
+
+
+# Usage
+```javascript
+const UniqueGen = require('uniquegen');
+or
+import UniqueGen from 'uniquegen';
+
+UniqueGen.randomNumber(10);
+output: 1234567890
+
+UniqueGen.randomWord(10);
+output: 1234567890
+
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
