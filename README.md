@@ -25,6 +25,13 @@ To generate a random word, use the following function:
 ```javascript
 UniqueGen.randomWord(10);
 
+# Random Symbols
+To generate a random symbol, use the following function:
+```javascript
+UniqueGen.randomSymbol(10);
+```
+This will generate a random symbol with a length of 10 characters.
+
 
 ```
 This will generate a random word with a length of 10 characters.
@@ -42,6 +49,9 @@ output: 1234567890
 
 UniqueGen.randomWord(10);
 output: aBcDeFgHiJ
+
+UniqueGen.randomSymbol(10);
+output: !@#$%^&*()_
 
 ```
 
