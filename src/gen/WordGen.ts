@@ -5,27 +5,56 @@ type num = number; // Type for number
 type str = string; // Type for string
 
 
+/**
+ * This TypeScript function generates a random string of specified length using letters from a to z.
+ * @param {num} length - The length parameter is a number that determines the length of the generated
+ * word. It is used to specify the number of rounds in the while loop that generates the random word.
+ * @returns a randomly generated string of characters with a length specified by the input parameter
+ * `length`.
+ */
 export default function GenerateWord(length:num):str {
     /* Creating an array of Words from a to z that will be used to generate the random  number
    ID. */
+/* This line of code is creating an array of all possible letters from 'a' to 'z' that will be used to
+generate a random string of characters. The array is stored in the constant variable `Words` and has
+a type of `str[]`, which means it is an array of strings. */
    const Words: str[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k','l','m', 'n', 'o', 'p', 'q', 'r', 's', 't','u','v','w','x','y','z']; // All Possible Words to generate
 
+  /* `let Rounds : num = length;` is initializing a variable `Rounds` with the value of the input
+  parameter `length`. It is used to determine the number of rounds in the while loop that generates
+  the random word. The value of `length` is assigned to `Rounds` so that the loop runs for the
+  specified number of rounds. */
    let Rounds : num = length; // Number of Rounds
 
+/* The code is initializing an empty array called `FinalID` with a type of `str[]`, which means it is
+an array of strings. This array will be used to store the randomly generated characters to create
+the final ID string. */
    // Final ID Array
     let FinalID: str[] = []; // Final ID
+
+    
+/* This code block is a while loop that generates a random string of characters. The loop runs for the
+number of rounds specified by the input parameter `length`. In each round, a random number between 0
+and 25 is generated using the `Math.random()` function. This number is then rounded to the nearest
+integer using the `Math.round()` function. The rounded number is used as an index to select a
+character from the `Words` array, which contains all possible letters from 'a' to 'z'. The selected
+character is then pushed to the `FinalID` array. Finally, the number of rounds is decreased by 1,
+and the loop continues until all rounds have been completed. */
 
    // Looping through the rounds
    while (Rounds > 0) {
          let TempRandomNumBer: num = Math.random() * (25 - 0) + 0; // Generate Random Number
-         let FinalRandomText: num = Math.round(TempRandomNumBer); // Round the Number
+         let FinalRandomNumForText: num = Math.round(TempRandomNumBer); // Round the Number
          // Push the Number to Final ID Array
-         FinalID.push(Words[FinalRandomText]); // Push the Number to Final ID
+         FinalID.push(Words[FinalRandomNumForText]); // Push the Number to Final ID
          Rounds--; // Decrease the Number of Rounds
    }
-   const FinalIDString: str = FinalID.join(''); // Join the Array to String
+ /* This code block is converting the `FinalID` array, which contains the randomly generated
+ characters, into a string by joining all the elements of the array together with no separator
+ between them. The resulting string is stored in the constant variable `FinalIDString`, which has a
+ type of `str`, meaning it is a string. Finally, the function returns the `FinalIDString` variable,
+ which contains the randomly generated string of characters. */
+   const FinalTextIDString: str = FinalID.join(''); // Join the Array to String
 
-   return FinalIDString; // Return the Final ID
-}
-
-console.log(GenerateWord(10))
+   return FinalTextIDString; // Return the Final ID
+};

@@ -1,5 +1,5 @@
 # UniqueGen
-UniqueGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.
+UniqueGen is an open-source package for Node.js, It enables generating random numbers, alphanumeric and has a range of IDs.It offers flexibility and ease of use, making it a valuable tool for developers.
 
 ## Installation
 To install UniqueGen, simply run the following command in your terminal:
