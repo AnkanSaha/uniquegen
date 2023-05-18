@@ -41,7 +41,7 @@ UniqueGen.randomNumber(10);
 output: 1234567890
 
 UniqueGen.randomWord(10);
-output: 1234567890
+output: aBcDeFgHiJ
 
 ```
 
