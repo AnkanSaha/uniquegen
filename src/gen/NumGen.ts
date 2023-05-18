@@ -12,7 +12,7 @@ type globe = any; // Type for string
 export default function GenerateID(length:num):num {
    /* Creating an array of numbers from 0 to 9 that will be used to generate the random 10-digit number
    ID. */
-    let Numbers: num[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; // All Possible Numbers to generate
+    const Numbers: num[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; // All Possible Numbers to generate
 
     /* The code is initializing two variables: `CountRound` and `FinalID`. */
     // Number of Rounds
@@ -42,8 +42,8 @@ export default function GenerateID(length:num):num {
   and assigned to the `FinalIDNumber` variable. Finally, the `FinalIDNumber` variable is returned as
   the final ID. */
     // Make the Final ID From Array to String
-    let FinalIDString: str = FinalID.join(''); // Join the Array to String
-    let FinalIDNumber: num = Number(FinalIDString); // Convert the String to Number
+    const FinalIDString: str = FinalID.join(''); // Join the Array to String
+    const FinalIDNumber: num = Number(FinalIDString); // Convert the String to Number
 
     return FinalIDNumber; // Return the Final ID
 }
