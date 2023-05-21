@@ -14,7 +14,7 @@ type globe = any; // Type for string
  * The value of this parameter is passed as an argument to the GenerateID function when it is called.
  * @returns a randomly generated 10-digit number ID as a number data type.
  */
-export default function GenerateNumber(length:num, Numbers:num[]):num {
+export default async function GenerateNumber(length:num, Numbers:num[]): Promise<num> {
 
     // Final ID Array
     let FinalID: num[] = []; // Final ID

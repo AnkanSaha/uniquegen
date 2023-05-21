@@ -17,7 +17,7 @@ type str = string; // Type for string
  * method.
  */
 
-export default function GenerateMixed(length: num, MixedArray: str[]): str {
+export default async function GenerateMixed(length: num, MixedArray: str[]): Promise<str> {
   /*This array will be used to store the randomly generated symbols that will be used to create the
 final symbol string of the specified length. */
   // Final ID Array

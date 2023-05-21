@@ -1,6 +1,24 @@
 # UniqueGen
 UniqueGen is an open-source package for Node.js, It enables generating random numbers, alphanumeric and has a range of IDs.It offers flexibility and ease of use, making it a valuable tool for developers.
 
+[![install size](https://packagephobia.com/badge?p=uniquegen)](https://packagephobia.com/result?p=uniquegen)
+
+## Pre Requisites
+You must have Node.js 14.0.0 or higher installed on your system. If you don't have Node.js installed, you can install it from [here](https://nodejs.org/en/download/).
+
+# Features
+- Generate random numbers
+- Generate random words
+- Generate random symbols
+- Generate random mixed IDs
+
+# Security
+UniqueGen is a secure package. It does not store any data on its server. All the data is generated on the user's system. It does not use any third-party API to generate data. It is a completely offline package.
+
+# Getting Started
+To get started with UniqueGen, you must first install it in your project. You can install UniqueGen using npm or yarn. We recommend using npm.
+
+
 ## Installation
 To install UniqueGen, simply run the following command in your terminal:
 ```bash
@@ -18,50 +36,26 @@ import UniqueGen from 'uniquegen'; // if you are using ES6
 ### Random Numbers
 To generate a random number in synchronous way, use the following function:
 ```javascript first paramenter is the  length of the Number you want to generate
-UniqueGen.randomNumberSync(10); // it will generate a random number of length 10 in syncronous way
+UniqueGen.randomNumber(10); // it will generate a random number of length 10 in syncronous way
 ```
 
 ### Random Words
 To generate a random word in synchronous way, use the following function:
 ```javascript first paramenter is the  length of the Word you want to generate & second parameter is All Alpha Caps or not (boolean)
-UniqueGen.randomWordSync(10, true); // it will generate a random word of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random word of length 10 with all alphabets in small in syncronous way
+UniqueGen.randomWord(10, true); // it will generate a random word of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random word of length 10 with all alphabets in small in syncronous way
 
 ```
 ### Random Mixed
 To generate a random Mixed ID in synchronous way, use the following function:
 ```javascript first paramenter is the  length of the Word you want to generate & second parameter is All Alpha is Caps or not (boolean)
-UniqueGen.randomMixedSync(10, true); // it will generate a random mixed ID of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random mixed ID of length 10 with all alphabets in small in syncronous way
+UniqueGen.randomMixed(10, true); // it will generate a random mixed ID of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random mixed ID of length 10 with all alphabets in small in syncronous way
 
 ```
 ### Random Symbols
 To generate a random symbol in synchronous way, use the following function:
 ```javascript first paramenter is the  length of the Symbol you want to generate
-UniqueGen.randomSymbolSync(10); // it will generate a random symbol of length 10 with all symbols in syncronous way
+UniqueGen.randomSymbol(10); // it will generate a random symbol of length 10 with all symbols in syncronous way
 
-```
-# Usage in synchronous way
-```javascript first paramenter is the  length of ID you want to generate
-const UniqueGen = require('uniquegen'); // if you are using CommonJS
-or
-import UniqueGen from 'uniquegen'; // if you are using ES6
-
-UniqueGen.randomNumberSync(10);
-output: 1234567890 // it will generate a random number of length 10 in syncronous way
-
-UniqueGen.randomWordSync(10, true);
-output: ABCDEFGHIJ // it will generate a random word of length 10 with all alphabets in caps in syncronous way
-
-UniqueGen.randomWordSync(10, false);
-output: abcdefghij // it will generate a random word of length 10 with all alphabets in small in syncronous way
-
-UniqueGen.randomSymbolSync(10);
-output: !@#$%^**() // it will generate a random symbol of length 10 with all symbols in syncronous way
-
-UniqueGen.randomMixedSync(10, false);
-output: 1a2b3c4de* // it will generate a random mixed ID of length 10 with all alphabets in small in syncronous way
-
-UniqueGen.randomMixedSync(10, true);
-output: 1A2B3C4DE* // it will generate a random mixed ID of length 10 with all alphabets in caps in syncronous way
 
 ```
 # Usage in asynchronous way
@@ -147,7 +141,8 @@ randomMixed(); // it will generate a random mixed ID of length 10 with all alpha
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-# Developed by [Ankan Saha]("github.com/AnkanSaha")
+# Project Status
+This project is currently in development. Users can generate random numbers, words, symbols and mixed IDs in synchronous and asynchronous way. please update the package to get the latest version.
 
 # Donation
 If you like my work and want to support me, you can donate me at [PayPal](https://paypal.me/ANKAN2003)
