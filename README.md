@@ -2,6 +2,9 @@
 UniqueGen is an open-source package for Node.js, It enables generating random numbers, alphanumeric and has a range of IDs.It offers flexibility and ease of use, making it a valuable tool for developers.
 
 [![install size](https://packagephobia.com/badge?p=uniquegen)](https://packagephobia.com/result?p=uniquegen)
+[![npm version](https://badge.fury.io/js/uniquegen.svg)](https://badge.fury.io/js/uniquegen)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dt/uniquegen.svg?style=flat-square)](https://www.npmjs.com/package/uniquegen)
 
 ## Pre Requisites
 You must have Node.js 14.0.0 or higher installed on your system. If you don't have Node.js installed, you can install it from [here](https://nodejs.org/en/download/).
