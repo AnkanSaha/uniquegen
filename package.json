@@ -36,8 +36,5 @@
   ],
   "devDependencies": {
     "@types/node": "^20.2.1"
-  },
-  "dependencies": {
-    "uniquegen": "^7.0.2"
   }
 }
