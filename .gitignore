@@ -1,4 +1,4 @@
 /lib
 /build
 /dist
-node modules
+node_modules

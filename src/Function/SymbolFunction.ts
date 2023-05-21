@@ -6,14 +6,14 @@
  import GenerateSymbol from "../gen/SymbolGen"; // function for generating a random word
  
  // function for generating a random number
- export function GenerateSymbolIDsync(length: num): str {
+ export default async function GenerateSymbolIDsync(length: num): Promise<str> {
 /* Defining an array of symbols that will be used to generate a random string of symbols in the
 `GenerateSymbol` function. The array contains various symbols such as exclamation mark, at sign,
 hash, dollar sign, etc. */
   // Symbol Array
   const Symbols: str[] = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "<", ".", ">", "/", "?", "|", "\\", "~", "`"]; // Symbol Array
  
-     let Result:str = GenerateSymbol(length, Symbols); // Generate the Random Number
+     let Result:str = await GenerateSymbol(length, Symbols); // Generate the Random Number
  
      return Result; // Return the Result
  };

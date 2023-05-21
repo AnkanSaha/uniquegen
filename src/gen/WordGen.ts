@@ -11,7 +11,7 @@ type str = string; // Type for string
  * @returns a randomly generated string of characters with a length specified by the input parameter
  * `length`.
  */
-export default function GenerateWord(length: num, Words: str[]): str {
+export default async function GenerateWord(length: num, Words: str[]): Promise<str> {
   /* The code is initializing an empty array called `FinalID` with a type of `str[]`, which means it is
 an array of strings. This array will be used to store the randomly generated characters to create
 the final ID string. */

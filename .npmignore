@@ -1,2 +1,4 @@
 node modules
 .gitignore
+src
+.github
