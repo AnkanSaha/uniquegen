@@ -2,3 +2,6 @@ node modules
 .gitignore
 src
 .github
+.prettierrc.json
+.prettierignore
+tsconfig.json
