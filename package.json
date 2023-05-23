@@ -1,17 +1,13 @@
 {
   "name": "uniquegen",
-  "version": "8.3.4",
+  "version": "8.3.5",
   "description": "uniquegen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.",
-  "main": "out/index.js",
-  "types": "out/index.d.ts",
+  "main": "Service/index.js",
+  "types": "Service/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
     "test": "npm test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AnkanSaha/UniqueGen.git"
   },
   "keywords": [
     "UniqueGen",
@@ -22,9 +18,6 @@
   ],
   "author": "Ankan Saha <server@theankan.live>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AnkanSaha/UniqueGen.git"
-  },
   "displayName": "UniqueGen",
   "icon": "https://th.bing.com/th/id/OIP.mp8SPXPOGVDGGvKVnwyoiQHaHa?pid=ImgDet&rs=1",
   "engines": {
