@@ -5,7 +5,7 @@
     "target": "ES6",                                  /* Set the JavaScript language version for emitted 
     /* Modules */
     "module": "CommonJS",                                /* Specify what module code is generated. */
-    "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+    "rootDir": "./source",                                  /* Specify the root folder within your source files. */
     /* JavaScript Support */
     "allowJs": false,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
@@ -23,6 +23,6 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/**/*"
+    "./source/**/*"
   ]
 }
