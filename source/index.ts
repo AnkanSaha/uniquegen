@@ -30,7 +30,7 @@ interface Generate {
     randomWord: (length: num, isCAPITAL: bool) => Promise<str>
     randomSymbol: (length: num) => Promise<str>
     randomMixed: (length: num, isCAPITAL: bool) => Promise<str>
-}
+};
 
 /* This code block is creating an object named `Generate` that implements the `Generate` interface. It
 is assigning the four functions `GenerateNumberID`, `GenerateWordID`, `GenerateSymbolID`, and
@@ -44,7 +44,7 @@ const Generate: Generate = {
     randomWord: GenerateWordID,
     randomSymbol: GenerateSymbolID,
     randomMixed: GenerateMixedID,
-}
+};
 
 //export named sync function for destructuring
 export const randomNumber = GenerateNumberID

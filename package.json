@@ -1,7 +1,7 @@
 {
   "name": "uniquegen",
   "version": "8.3.5",
-  "description": "uniquegen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.",
+  "description": "uniquegen is an package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.",
   "main": "Service/index.js",
   "types": "Service/index.d.ts",
   "scripts": {
