@@ -28,8 +28,7 @@ and the loop continues until all rounds have been completed. */
 
   // Looping through the rounds
   while (length > 0) {
-    let TempRandomNumBer: num = Math.random() * (25 - 0) + 0; // Generate Random Number
-    let FinalRandomNumForText: num = Math.round(TempRandomNumBer); // Round the Number
+    let FinalRandomNumForText: num = await GenerateNumberIndex(Words); // Generate Random Number Index Between 0 and Array Length - 1
     // Push the Number to Final ID Array
     FinalID.push(Words[FinalRandomNumForText]); // Push the Number to Final ID
     length--; // Decrease the Number of Rounds
@@ -42,4 +41,12 @@ and the loop continues until all rounds have been completed. */
   const FinalTextIDString: str = FinalID.join(""); // Join the Array to String
 
   return FinalTextIDString; // Return the Final ID
+}
+
+
+// Generate Random Number Index
+async function GenerateNumberIndex(ArrayWords:str[]): Promise<num> {
+  let TempRandomNumBer: num = Math.random() * (ArrayWords.length-1 - 0) + 0; // Generate Random Number Between 0 and Array Length - 1
+  let FinalRandomNumber: num  = Math.round(TempRandomNumBer) // Round the Number
+  return FinalRandomNumber; // Return the Final Random Number
 }

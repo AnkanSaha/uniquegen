@@ -3,7 +3,6 @@
 // global typescript types
 type num = number; // Type for number
 type str = string; // Type for string
-type globe = any; // Type for string
 
 
 /**
@@ -26,11 +25,10 @@ export default async function GenerateNumber(length:num, Numbers:num[]): Promise
    can be used to generate the ID. The selected number is then pushed to the `FinalID` array. After
    10 rounds, the `FinalID` array is joined into a string and converted to a number, which is then
    returned as the final ID. */
-    while (length > 0) {
-        let TempRandomNumBer: num = Math.random() * (9 - 0) + 0; // Generate Random Number
-        let FinalRandomNumber: num | globe = TempRandomNumBer.toFixed(); // Round the Number
-        // Push the Number to Final ID Array
-        FinalID.push(Numbers[FinalRandomNumber]); // Push the Number to Final ID
+    while (length > 0) {    
+      let FinalRandomNumber: num = await GenerateNumberIndex(Numbers); // Generate Random Number Index Between 0 and Array Length - 1
+          // Push the Number to Final ID Array
+          FinalID.push(Numbers[FinalRandomNumber]); // Push the Number to Final ID
         length--; // Decrease the Number of Rounds
     }
 
@@ -45,3 +43,10 @@ export default async function GenerateNumber(length:num, Numbers:num[]): Promise
 
     return FinalIDNumber; // Return the Final ID
 };
+
+// Generate Random Number Index
+async function GenerateNumberIndex(ArrayNumbers:num[]): Promise<num> {
+  let TempRandomNumBer: num = Math.random() * (ArrayNumbers.length-1 - 0) + 0; // Generate Random Number Between 0 and Array Length - 1
+  let FinalRandomNumber: num  = Math.round(TempRandomNumBer) // Round the Number
+  return FinalRandomNumber; // Return the Final Random Number
+}
