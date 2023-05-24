@@ -34,31 +34,6 @@ To use UniqueGen, you must first import it into your project:
 const UniqueGen = require('uniquegen'); // if you are using CommonJS
 or
 import UniqueGen from 'uniquegen'; // if you are using ES6
-```
-
-### Random Numbers
-To generate a random number in synchronous way, use the following function:
-```javascript first paramenter is the  length of the Number you want to generate
-UniqueGen.randomNumber(10); // it will generate a random number of length 10 in syncronous way
-```
-
-### Random Words
-To generate a random word in synchronous way, use the following function:
-```javascript first paramenter is the  length of the Word you want to generate & second parameter is All Alpha Caps or not (boolean)
-UniqueGen.randomWord(10, true); // it will generate a random word of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random word of length 10 with all alphabets in small in syncronous way
-
-```
-### Random Mixed
-To generate a random Mixed ID in synchronous way, use the following function:
-```javascript first paramenter is the  length of the Word you want to generate & second parameter is All Alpha is Caps or not (boolean)
-UniqueGen.randomMixed(10, true); // it will generate a random mixed ID of length 10 with all alphabets in caps because second parameter is true if false then it will generate a random mixed ID of length 10 with all alphabets in small in syncronous way
-
-```
-### Random Symbols
-To generate a random symbol in synchronous way, use the following function:
-```javascript first paramenter is the  length of the Symbol you want to generate
-UniqueGen.randomSymbol(10); // it will generate a random symbol of length 10 with all symbols in syncronous way
-
 
 ```
 # Usage in asynchronous way
@@ -67,29 +42,42 @@ const UniqueGen = require('uniquegen'); // if you are using CommonJS
 or
 import UniqueGen from 'uniquegen'; // if you are using ES6
 
-UniqueGen.randomNumber(10).then((data) => {
+UniqueGen.randomNumber({length: 10, WithoutZero: true}).then((data) => {
     console.log(data);
-}); // it will generate a random number of length 10 in asynchronous way
+    output: 1234567899
+}); // it will generate a random number of length 10 without zero in asynchronous way
 
-UniqueGen.randomWord(10, true).then((data) => {
+UniqueGen.randomNumber({length: 10, WithoutZero: false}).then((data) => {
     console.log(data);
+    output: 0123456789
+}); // it will generate a random number of length 10 with zero in asynchronous way
+
+UniqueGen.randomWord({length: 10, isCAPITAL: true}).then((data) => {
+    console.log(data);
+    output: ABCDEFGHIJ
 }); // it will generate a random word of length 10 with all alphabets in caps in asynchronous way
 
-UniqueGen.randomWord(10, false).then((data) => {
+UniqueGen.randomWord({length: 10, isCAPITAL: false}).then((data) => {
     console.log(data);
+    output: abcdefghij
 }); // it will generate a random word of length 10 with all alphabets in small in asynchronous way
 
-UniqueGen.randomSymbol(10).then((data) => {
+
+UniqueGen.randomSymbol({length:10}).then((data) => {
     console.log(data);
+    output: !@#$%^&***
 }); // it will generate a random symbol of length 10 with all symbols in asynchronous way
 
-UniqueGen.randomMixed(10, false).then((data) => {
+UniqueGen.randomMixed({length: 10, isCAPITAL: false}).then((data) => {
     console.log(data);
+    output: abc#$%^&**
 }); // it will generate a random mixed ID of length 10 with all alphabets in small in asynchronous way
 
-UniqueGen.randomMixed(10, true).then((data) => {
+UniqueGen.randomMixed({length: 10, isCAPITAL: true}).then((data) => {
     console.log(data);
+    output: ABC#$%^&**
 }); // it will generate a random mixed ID of length 10 with all alphabets in caps in asynchronous way
+
 
 ```
 
@@ -101,42 +89,60 @@ or
 import UniqueGen from 'uniquegen'; // if you are using ES6
 
 const randomNumber = async () => {
-    const data = await UniqueGen.randomNumber(10);
+    const data = await UniqueGen.randomNumber({length: 10, WithoutZero: true});
     console.log(data);
+    output: 1234567899
 }
-randomNumber(); // it will generate a random number of length 10 in asynchronous way
+randomNumber(); // it will generate a random number of length 10 without zero in asynchronous way
+
+const randomNumber = async () => {
+    const data = await UniqueGen.randomNumber({length: 10, WithoutZero: false});
+    console.log(data);
+    output: 0123456789
+}
+randomNumber(); // it will generate a random number of length 10 with zero in asynchronous way
 
 const randomWord = async () => {
-    const data = await UniqueGen.randomWord(10, true);
+    const data = await UniqueGen.randomWord({length: 10, isCAPITAL: true});
     console.log(data);
+    output: ABCDEFGHIJ
 }
 randomWord(); // it will generate a random word of length 10 with all alphabets in caps in asynchronous way
 
+
 const randomWord = async () => {
-    const data = await UniqueGen.randomWord(10, false);
+    const data = await UniqueGen.randomWord({length: 10, isCAPITAL: false});
     console.log(data);
+    output: abcdefghij
 }
 randomWord(); // it will generate a random word of length 10 with all alphabets in small in asynchronous way
 
 const randomSymbol = async () => {
-    const data = await UniqueGen.randomSymbol(10);
+    const data = await UniqueGen.randomSymbol({length:10});
     console.log(data);
+    output: !@#$%^&***
 }
 randomSymbol(); // it will generate a random symbol of length 10 with all symbols in asynchronous way
 
 const randomMixed = async () => {
-    const data = await UniqueGen.randomMixed(10, false);
+    const data = await UniqueGen.randomMixed({length: 10, isCAPITAL: false});
     console.log(data);
+    output: abc#$%^&**
 }
 randomMixed(); // it will generate a random mixed ID of length 10 with all alphabets in small in asynchronous way
 
 const randomMixed = async () => {
-    const data = await UniqueGen.randomMixed(10, true);
+    const data = await UniqueGen.randomMixed({length: 10, isCAPITAL: true});
     console.log(data);
+    output: ABC#$%^&**
 }
 randomMixed(); // it will generate a random mixed ID of length 10 with all alphabets in caps in asynchronous way
 
 ```
+
+# Adtional Features
+- You can set Custom Symbols, Words, Numbers & Mixed Data in third parameter of the function object.
+
 # Contributing
 [Ankan Saha]("github.com/AnkanSaha")
 [Priya Ghosh]("https://www.npmjs.com/~priya_ghosh")
