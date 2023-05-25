@@ -7,14 +7,23 @@
 
  // function for generating a random mixed ID
 
- // interface for the function
-
- interface GenerateMixedID {
-    length: num; // length of the ID
-    isCAPITAL: bool; // should the ID be in capital
-    CustomMixeds?: str[]; // Custom Words to generate
- }
- export default async function GenerateMixedID({length, isCAPITAL=false, CustomMixeds = undefined}: GenerateMixedID): Promise<str> {
+/**
+ * This TypeScript function generates a random mixed ID of a specified length, with the option to
+ * include custom characters and make the ID all capital letters.
+ * @param {num} [length=1] - The length of the mixed ID that will be generated. It is a number
+ * parameter with a default value of 1 if not provided.
+ * @param {bool} [isCAPITAL=false] - A boolean parameter that determines whether the generated mixed ID
+ * should be in all capital letters or not. If set to true, the generated ID will be returned in all
+ * capital letters. If set to false or not provided, the generated ID will be returned in lowercase
+ * letters.
+ * @param {str[] | undefined} CustomMixeds - CustomMixeds is an optional parameter that allows the user
+ * to provide their own array of characters to be used in generating the mixed ID. If this parameter is
+ * not provided, the function will use the default array of characters defined in the code.
+ * @returns a Promise that resolves to a string. The string is a randomly generated mixed ID of the
+ * specified length, with the option to include custom characters and to make the ID all capital
+ * letters.
+ */
+ export default async function GenerateMixedID(length : num = 1, isCAPITAL : bool = false, CustomMixeds : str[] | undefined = undefined): Promise<str> {
     /* This line of code is creating an array of all possible letters from 'a' to 'z' that will be used to*/
     const Mixed: str[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '.', '>', '/', '?', '|', '\\', '~']; // All Possible Words to generate
 
