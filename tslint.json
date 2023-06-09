@@ -1,0 +1,29 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {
+        "no-console": true,
+        "no-debugger": true,
+        "no-empty": true,
+        "no-eval": true,
+        "no-var-keyword": true,
+        "no-duplicate-variable": true
+    },
+    "rules": {
+        "no-console": true,
+        "no-debugger": true,
+        "no-empty": true,
+        "no-eval": true,
+        "no-var-keyword": true,
+        "no-duplicate-variable": true,
+        "no-internal-module": true,
+        "no-namespace": true,
+        "no-reference": true,
+        "no-require-imports": true,
+        "no-trailing-whitespace": true,
+        "no-unused-expression": true
+    },
+    "rulesDirectory": []
+}
