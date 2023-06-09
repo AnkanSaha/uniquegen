@@ -6,9 +6,6 @@ UniqueGen is an package for Node.js, It enables generating random numbers, alpha
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dt/uniquegen.svg?style=flat-square)](https://www.npmjs.com/package/uniquegen)
 
-## Pre Requisites
-You must have Node.js 14.0.0 or higher installed on your system. If you don't have Node.js installed, you can install it from [here](https://nodejs.org/en/download/).
-
 # Features
 - Generate random numbers
 - Generate random words
