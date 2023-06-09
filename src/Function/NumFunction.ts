@@ -20,22 +20,22 @@ import GenerateNumber from "../gen/NumGen"; // function for generating a random 
  * use the default array of numbers from 0 to 9.
  * @returns a Promise that resolves to a number (num).
  */
-export default async function GenerateNumberID(length:num = 1, WithZero:bool = true, CustomNumbers:num[] | undefined = undefined): Promise<num> {
+export default async function GenerateNumberID(length:num = 1, WithZero:bool = true, CustomNumbers?:num[]): Promise<num> {
   /* Creating an array of numbers from 0 to 9 that will be used to generate the random 10-digit number
     ID. */
     const NumbersArray: num[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; // All Possible Numbers to generate
 
     // Filtered Array
-    let FilteredArray: num[] = CustomNumbers !== undefined ? CustomNumbers : NumbersArray
+    const FilteredArray: num[] = CustomNumbers !== undefined ? CustomNumbers : NumbersArray
 
     if(WithZero === false){
-      let Zero_Index_Num : num = FilteredArray.indexOf(0); // Get the index of Zero
-      FilteredArray.splice(Zero_Index_Num, 1); // Remove Zero from the Array
-      let Generation_Result: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
-      return Generation_Result; // Return the Result
+      const ZeroIndexNum : num = FilteredArray.indexOf(0); // Get the index of Zero
+      FilteredArray.splice(ZeroIndexNum, 1); // Remove Zero from the Array
+      const GenerationResult: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
+      return GenerationResult; // Return the Result
     }
     else{
-      let Generation_Result: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
-      return Generation_Result; // Return the Result
+      const GenerationResult: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
+      return GenerationResult; // Return the Result
     }
 };

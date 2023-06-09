@@ -16,7 +16,7 @@ export default async function GenerateWord(length: num, Words: str[]): Promise<s
 an array of strings. This array will be used to store the randomly generated characters to create
 the final ID string. */
   // Final ID Array
-  let FinalID: str[] = []; // Final ID
+  const FinalID: str[] = []; // Final ID
 
   /* This code block is a while loop that generates a random string of characters. The loop runs for the
 number of rounds specified by the input parameter `length`. In each round, a random number between 0
@@ -28,7 +28,7 @@ and the loop continues until all rounds have been completed. */
 
   // Looping through the rounds
   while (length > 0) {
-    let FinalRandomNumForText: num = await GenerateNumberIndex(Words); // Generate Random Number Index Between 0 and Array Length - 1
+    const FinalRandomNumForText: num = await GenerateNumberIndex(Words); // Generate Random Number Index Between 0 and Array Length - 1
     // Push the Number to Final ID Array
     FinalID.push(Words[FinalRandomNumForText]); // Push the Number to Final ID
     length--; // Decrease the Number of Rounds
@@ -46,7 +46,7 @@ and the loop continues until all rounds have been completed. */
 
 // Generate Random Number Index
 async function GenerateNumberIndex(ArrayWords:str[]): Promise<num> {
-  let TempRandomNumBer: num = Math.random() * (ArrayWords.length-1 - 0) + 0; // Generate Random Number Between 0 and Array Length - 1
-  let FinalRandomNumber: num  = Math.round(TempRandomNumBer) // Round the Number
+  const TempRandomNumBer: num = Math.random() * (ArrayWords.length-1 - 0) + 0; // Generate Random Number Between 0 and Array Length - 1
+  const FinalRandomNumber: num  = Math.round(TempRandomNumBer) // Round the Number
   return FinalRandomNumber; // Return the Final Random Number
 }
