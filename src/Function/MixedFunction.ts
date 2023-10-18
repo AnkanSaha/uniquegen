@@ -24,11 +24,11 @@
  * @returns a Promise that resolves to a string. The string is a randomly generated mixed ID of the
  * specified length, with the option to include custom characters and to make the ID all uppercase.
  */
- export default async function GenerateMixedID(length:num = 1, isCAPITAL:bool = false, CustomMixeds?:str[]): Promise<str> {
+ export default function GenerateMixedID(length:num = 1, isCAPITAL:bool = false, CustomMixeds?:str[]): str {
     /* This line of code is creating an array of all possible letters from 'a' to 'z' that will be used to*/
     const Mixed: str[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '.', '>', '/', '?', '|', '\\', '~']; // All Possible Words to generate
 
-        let Result:str = await GenerateMixed(length, CustomMixeds !== undefined ? CustomMixeds : Mixed ); // Generate the Random Number
+        let Result:str = GenerateMixed(length, CustomMixeds !== undefined ? CustomMixeds : Mixed ); // Generate the Random Number
 
         // Checking if the Word should be Capital
         if(isCAPITAL === true){
