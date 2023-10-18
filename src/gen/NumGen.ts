@@ -12,11 +12,11 @@ type str = string; // Type for string
  * The value of this parameter is passed as an argument to the GenerateID function when it is called.
  * @returns a randomly generated 10-digit number ID as a number data type.
  */
-export default async function GenerateNumber(length: num, Numbers: num[]): Promise<num> {
+export default function GenerateNumber(length: num, Numbers: num[]): num {
     // Final ID Array
     const FinalID: num[] = []; // Final ID Array
     while (length > 0) {
-        const FinalRandomNumber: num = await GenerateNumberIndex(Numbers); // Generate Random Number Index Between 0 and Array Length - 1
+        const FinalRandomNumber: num = GenerateNumberIndex(Numbers); // Generate Random Number Index Between 0 and Array Length - 1
         FinalID.push(Numbers[FinalRandomNumber]); // Push the Number to Final ID
         length--; // Decrease the Number of Rounds
     }
@@ -34,7 +34,7 @@ export default async function GenerateNumber(length: num, Numbers: num[]): Promi
 }
 
 // Generate Random Number Index
-async function GenerateNumberIndex(ArrayNumbers: num[]): Promise<num> {
+function GenerateNumberIndex(ArrayNumbers: num[]): num {
     const TempRandomNumBer: num = Math.random() * (ArrayNumbers.length - 1 - 0) + 0; // Generate Random Number Between 0 and Array Length - 1
     const FinalRandomNumber: num = Math.round(TempRandomNumBer); // Round the Number
     return FinalRandomNumber; // Return the Final Random Number

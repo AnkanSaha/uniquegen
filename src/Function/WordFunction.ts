@@ -25,12 +25,12 @@
   * default, but can be customized by passing in a different array of characters as an argument
   * (`CustomWords`). The
   */
- export default async function GenerateWordIDsync(length :num = 1, isCAPITAL : bool = false, CustomWords?: str[]): Promise<str> {
+ export default function GenerateWordIDsync(length :num = 1, isCAPITAL : bool = false, CustomWords?: str[]): str {
   /* This line of code is creating an array of all possible letters from 'a' to 'z' that will be used to
 generate a random string of characters. The array is stored in the constant variable `Words` and has
 a type of `str[]`, which means it is an array of strings. */
 const Words: str[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k','l','m', 'n', 'o', 'p', 'q', 'r', 's', 't','u','v','w','x','y','z']; // All Possible Words to generate
-     let Result:str = await GenerateWord(length, CustomWords !== undefined ? CustomWords : Words); // Generate the Random Number
+     let Result:str = GenerateWord(length, CustomWords !== undefined ? CustomWords : Words); // Generate the Random Number
      // Checking if the Word should be Capital
      if(isCAPITAL === true){
          return Result = Result.toUpperCase(); // Return the Result in Capital

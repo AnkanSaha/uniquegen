@@ -23,7 +23,8 @@
         "no-reference": true,
         "no-require-imports": true,
         "no-trailing-whitespace": true,
-        "no-unused-expression": true
+        "no-unused-expression": true,
+        "no-shadowed-variable": false
     },
     "rulesDirectory": []
 }

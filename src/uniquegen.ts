@@ -14,10 +14,10 @@ import GenerateMixedID from './Function/MixedFunction'; // Import the Random Mix
 
 // Global TypeScript Interfaces
 interface Generate {
-    randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => Promise<num>;
-    randomWord: (length: num, isCAPITAL: bool, CustomWords: str[] | undefined) => Promise<str>;
-    randomSymbol: (length: num, CustomSymbols: str[] | undefined) => Promise<str>;
-    randomMixed: (length: num, isCAPITAL: bool, CustomMixeds: str[] | undefined) => Promise<str>;
+    randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => num;
+    randomWord: (length: num, isCAPITAL: bool, CustomWords: str[] | undefined) => str;
+    randomSymbol: (length: num, CustomSymbols: str[] | undefined) => str;
+    randomMixed: (length: num, isCAPITAL: bool, CustomMixeds: str[] | undefined) =>  str;
 }
 
 /* This code block is creating an object named `Generate` that implements the `Generate` interface. It

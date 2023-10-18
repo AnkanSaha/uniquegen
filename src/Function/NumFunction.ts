@@ -20,7 +20,7 @@ import GenerateNumber from "../gen/NumGen"; // function for generating a random 
  * use the default array of numbers from 0 to 9.
  * @returns a Promise that resolves to a number (num).
  */
-export default async function GenerateNumberID(length:num = 1, WithZero:bool = true, CustomNumbers?:num[]): Promise<num> {
+export default function GenerateNumberID(length:num = 1, WithZero:bool = true, CustomNumbers?:num[]): num {
   /* Creating an array of numbers from 0 to 9 that will be used to generate the random 10-digit number
     ID. */
     const NumbersArray: num[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; // All Possible Numbers to generate
@@ -31,11 +31,11 @@ export default async function GenerateNumberID(length:num = 1, WithZero:bool = t
     if(WithZero === false){
       const ZeroIndexNum : num = FilteredArray.indexOf(0); // Get the index of Zero
       FilteredArray.splice(ZeroIndexNum, 1); // Remove Zero from the Array
-      const GenerationResult: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
+      const GenerationResult: num = GenerateNumber(length, FilteredArray); // Generate the Random Number
       return GenerationResult; // Return the Result
     }
     else{
-      const GenerationResult: num = await GenerateNumber(length, FilteredArray); // Generate the Random Number
+      const GenerationResult: num = GenerateNumber(length, FilteredArray); // Generate the Random Number
       return GenerationResult; // Return the Result
     }
 };
