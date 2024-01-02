@@ -1,5 +1,5 @@
 /* COPYRIGHT BY @Ankan Saha */
-/* COPYRIGHT YEAR 2023 */
+/* COPYRIGHT YEAR 2024 */
 
 // global TypeScript types
 type num = number; // Type for number
