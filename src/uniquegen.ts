@@ -1,4 +1,4 @@
-/* COPYRIGHT BY @Ankan Saha */
+/* COPYRIGHT BY @AnkanSaha */
 /* COPYRIGHT YEAR 2024 */
 
 // global TypeScript types
