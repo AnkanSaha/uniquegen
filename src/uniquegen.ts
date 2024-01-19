@@ -40,4 +40,4 @@ const Generate: Generate = {
     export const randomMixed = GenerateMixedID; // Export the Function for Random Mixed
 
 // Export the default function
-export default Generate; // Export the Function
+export default Generate; // Export the Function in Index
