@@ -13,7 +13,7 @@ import GenerateSymbolID from './Function/SymbolFunction'; // Import the Random S
 import GenerateMixedID from './Function/MixedFunction'; // Import the Random Mixed Generator Function
 
 // Global TypeScript Interfaces
-interface Generate {
+export interface Generate {
     randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => num;
     randomWord: (length: num, isCAPITAL: bool, CustomWords: str[] | undefined) => str;
     randomSymbol: (length: num, CustomSymbols: str[] | undefined) => str;
