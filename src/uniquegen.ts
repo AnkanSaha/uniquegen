@@ -1,24 +1,12 @@
-/* COPYRIGHT BY @AnkanSaha */
-/* COPYRIGHT YEAR 2024 */
-
-// global TypeScript types
-type num = number; // Type for number
-type bool = boolean; // Type for boolean
-type str = string; // Type for string
-
 // Importing the Function from the Function folder
 import GenerateNumberID from './Function/NumFunction'; // Import the Random Number Generator Function
 import GenerateWordID from './Function/WordFunction'; // Import the Random Word Generator Function
 import GenerateSymbolID from './Function/SymbolFunction'; // Import the Random Symbol Generator Function
 import GenerateMixedID from './Function/MixedFunction'; // Import the Random Mixed Generator Function
 
-// Global TypeScript Interfaces
-interface Generate {
-    randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => num;
-    randomWord: (length: num, isCAPITAL: bool, CustomWords: str[] | undefined) => str;
-    randomSymbol: (length: num, CustomSymbols: str[] | undefined) => str;
-    randomMixed: (length: num, isCAPITAL: bool, CustomMixeds: str[] | undefined) =>  str;
-}
+
+// Importing Interfaces
+import { Generate } from './interfaces/uniquegen.interface'; // Import generate Interface
 
 /* This code block is creating an object named `Generate` that implements the `Generate` interface. It
 is assigning the four functions `GenerateNumberID`, `GenerateWordID`, `GenerateSymbolID`, and
