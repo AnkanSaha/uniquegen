@@ -57,7 +57,7 @@ a type of `str[]`, which means it is an array of strings. */
         'y',
         'z',
     ]; // All Possible Words to generate
-    let Result: str = GenerateWord(length, CustomWords !== undefined ? CustomWords : Words); // Generate the Random Number
+    const Result: str = GenerateWord(length, CustomWords !== undefined ? CustomWords : Words); // Generate the Random Number
     // Checking if the Word should be Capital
     if (isCAPITAL === true) {
         return Result.toUpperCase(); // Return the Result in Capital
