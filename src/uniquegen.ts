@@ -17,7 +17,7 @@ export interface Generate {
     randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => num;
     randomWord: (length: num, isCAPITAL: bool, CustomWords: str[] | undefined) => str;
     randomSymbol: (length: num, CustomSymbols: str[] | undefined) => str;
-    randomMixed: (length: num, isCAPITAL: bool, CustomMixeds: str[] | undefined) =>  str;
+    randomMixed: (length: num, isCAPITAL: bool, CustomMixeds: str[] | undefined) => str;
 }
 
 /* This code block is creating an object named `Generate` that implements the `Generate` interface. It
@@ -34,10 +34,10 @@ const Generate: Generate = {
     randomMixed: GenerateMixedID,
 };
 
-    export const randomNumber = GenerateNumberID; // Export the Function for Random Number
-    export const randomWord = GenerateWordID; // Export the Function for Random Word
-    export const randomSymbol = GenerateSymbolID; // Export the Function for Random Symbol
-    export const randomMixed = GenerateMixedID; // Export the Function for Random Mixed
+export const randomNumber = GenerateNumberID; // Export the Function for Random Number
+export const randomWord = GenerateWordID; // Export the Function for Random Word
+export const randomSymbol = GenerateSymbolID; // Export the Function for Random Symbol
+export const randomMixed = GenerateMixedID; // Export the Function for Random Mixed
 
 // Export the default function
 export default Generate; // Export the Function in Index
