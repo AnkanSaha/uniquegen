@@ -60,7 +60,7 @@ a type of `str[]`, which means it is an array of strings. */
     let Result: str = GenerateWord(length, CustomWords !== undefined ? CustomWords : Words); // Generate the Random Number
     // Checking if the Word should be Capital
     if (isCAPITAL === true) {
-        return (Result = Result.toUpperCase()); // Return the Result in Capital
+        return Result.toUpperCase(); // Return the Result in Capital
     } else {
         return Result; // Return the Result
     }
