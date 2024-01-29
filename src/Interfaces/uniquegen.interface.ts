@@ -5,7 +5,6 @@ type num = number; // Type for number
 type bool = boolean; // Type for boolean
 type str = string; // Type for string
 
-
 // global TypeScript types
 export interface Generate {
     randomNumber: (length: num, WithZero: bool, CustomNumbers: num[] | undefined) => num;

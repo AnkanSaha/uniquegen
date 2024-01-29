@@ -88,7 +88,7 @@ const Generate: Generate = Object.freeze({
      * @name Generate.randomBoolean
      * @returns {boolean} The generated random boolean value.
      */
-    randomBoolean: GenerateBooleanID
+    randomBoolean: GenerateBooleanID,
 });
 
 /**
