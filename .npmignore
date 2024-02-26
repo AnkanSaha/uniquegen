@@ -6,5 +6,8 @@ src
 .prettierignore
 tsconfig.json
 tslint.json
-CODE_OF_CONDUCT.md
 .devcontainer
+.deepsource.toml
+docker-compose.yml
+.eslintrc.yml
+.gitpod.yml
