@@ -9,3 +9,5 @@ tslint.json
 .devcontainer
 .deepsource.toml
 docker-compose.yml
+.eslintrc.yml
+.gitpod.yml
