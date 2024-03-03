@@ -6,6 +6,7 @@ UniqueGen is an package for Node.js, It enables generating random numbers, alpha
 [![npm version](https://badge.fury.io/js/uniquegen.svg)](https://badge.fury.io/js/uniquegen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dt/uniquegen.svg?style=flat-square)](https://www.npmjs.com/package/uniquegen)
+[![CodeQL](https://github.com/AnkanSaha/uniquegen/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/AnkanSaha/uniquegen/actions/workflows/github-code-scanning/codeql)
 
 # Features
 
