@@ -9,5 +9,9 @@ tslint.json
 .devcontainer
 .deepsource.toml
 docker-compose.yml
-.eslintrc.yml
 .gitpod.yml
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LEARN.md
+SECURITY.md
+.vscode
