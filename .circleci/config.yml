@@ -38,7 +38,7 @@ jobs:
           name: Change the Package name in Package.json
           command: |
             apt-get update && apt-get install -y sed
-            sed -i "2s/\"outers\"/\"@${GITHUB_USER_NAME}\/outers\"/" package.json
+            sed -i "2s/\"uniquegen\"/\"@${GITHUB_USER_NAME}\/uniquegen\"/" package.json
       
       - run:
           name: Publish to Github Package Registry
