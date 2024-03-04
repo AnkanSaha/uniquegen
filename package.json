@@ -1,6 +1,6 @@
 {
   "name": "uniquegen",
-  "version": "8.6.3",
+  "version": "8.6.4",
   "description": "uniquegen is an package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers.",
   "main": "Service/uniquegen.js",
   "types": "Service/uniquegen.d.ts",
