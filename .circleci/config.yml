@@ -1,7 +1,26 @@
 version: 2.1
 
 jobs:
-  Publish_To_NPM:
+  Push_To_Gitlab:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Add Gitlab Remote URL
+          command: git remote add gitlab ${GITLAB_REPO_URL}
+      - run:
+          name: Configure GitLab Credentials
+          command: |
+            git config --global credential.helper store
+            echo "https://oauth2:${GITLAB_PERMANENT_ACCESS_TOKEN}@gitlab.com" > ~/.git-credentials
+            git config --global user.email "${OWNER_EMAIL}"
+            git config --global user.name "${OWNER_NAME}"
+      - run:
+          name: Push to Gitlab
+          command: |
+            git push gitlab
+  Build:
     docker:
       - image: node:latest
     steps:
@@ -9,13 +28,26 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-
       - run:
           name: Build Package
           command: npm run build
       - run:
           name: Test Package
           command: npm run test
+      - persist_to_workspace:
+          root: .
+          paths:
+            - Service
+            - package.json
+            - package-lock.json
+            - README.md
+            - LICENSE
+  Publish_To_NPM:
+    docker:
+      - image: node:latest
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: Set NPM Auth Token
           command: |
@@ -28,16 +60,8 @@ jobs:
     docker:
         - image: node:latest
     steps:
-        - checkout
-        - run:
-            name: Install Dependencies
-            command: npm install
-        - run:
-            name: Build Package
-            command: npm run build
-        - run:
-            name: Test Package
-            command: npm run test
+      - attach_workspace:
+          at: /tmp/workspace
         - run:
             name: Set Github Auth Token
             command: |
@@ -56,14 +80,29 @@ workflows:
   version: 2
   Registry_Publish:
     jobs:
+      - Build:
+          name: Build Package
+          filters:
+            branches:
+              only: main
       - Publish_To_NPM:
           name: Publish to NPM Registry
+          requires:
+            - Build
           filters:
             branches:
               only: main
       - Publish_To_Github:
           name: Publish to Github Registry
           requires:
+            - Build
+          filters:
+            branches:
+              only: main
+      - Push_To_Gitlab:
+          name: Push to Gitlab
+          requires:
+            - Publish to Github Registry
             - Publish to NPM Registry
           filters:
             branches:
