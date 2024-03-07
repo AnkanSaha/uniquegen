@@ -56,7 +56,9 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ~/.npmrc
       - run:
           name: Publish to NPM Registry
-          command: npm publish --registry https://registry.npmjs.org --access public
+          command: |
+            cd /tmp/workspace
+            npm publish --registry https://registry.npmjs.org --access public
 
   Publish_To_Github:
     docker:
@@ -75,7 +77,9 @@ jobs:
             sed -i "2s/\"uniquegen\"/\"@${GITHUB_USER_NAME}\/uniquegen\"/" package.json
       - run:
           name: Publish to Github Package Registry
-          command: npm publish --registry=https://npm.pkg.github.com --scope=@${GITHUB_USER_NAME} --access public
+          command: |
+            cd /tmp/workspace
+            npm publish --registry=https://npm.pkg.github.com --scope=@${GITHUB_USER_NAME} --access public
 
 workflows:
   version: 2
