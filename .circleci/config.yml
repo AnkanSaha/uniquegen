@@ -21,7 +21,7 @@ jobs:
           command: |
             git push gitlab
 
-  Build:
+  Test_Package:
     docker:
       - image: node:latest
     steps:
@@ -35,37 +35,43 @@ jobs:
       - run:
           name: Test Package
           command: npm run test
-      - persist_to_workspace:
-          root: .
-          paths:
-            - Service
-            - package.json
-            - package-lock.json
-            - README.md
-            - LICENSE
 
   Publish_To_NPM:
     docker:
       - image: node:latest
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Build Package
+          command: npm run build
+      - run:
+          name: Test Package
+          command: npm run test
       - run:
           name: Set NPM Auth Token
           command: |
             echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ~/.npmrc
       - run:
           name: Publish to NPM Registry
-          command: |
-            cd /tmp/workspace
-            npm publish --registry https://registry.npmjs.org --access public
+          command: npm publish --registry https://registry.npmjs.org --access public
 
   Publish_To_Github:
     docker:
       - image: node:latest
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Build Package
+          command: npm run build
+      - run:
+          name: Test Package
+          command: npm run test
       - run:
           name: Set Github Auth Token
           command: |
@@ -77,30 +83,28 @@ jobs:
             sed -i "2s/\"uniquegen\"/\"@${GITHUB_USER_NAME}\/uniquegen\"/" package.json
       - run:
           name: Publish to Github Package Registry
-          command: |
-            cd /tmp/workspace
-            npm publish --registry=https://npm.pkg.github.com --scope=@${GITHUB_USER_NAME} --access public
+          command: npm publish --registry=https://npm.pkg.github.com --scope=@${GITHUB_USER_NAME} --access public
 
 workflows:
   version: 2
   Registry_Publish:
     jobs:
-      - Build:
-          name: Build Package
+      - Test_Package:
+          name: Build & Test Package
           filters:
             branches:
               only: main
       - Publish_To_NPM:
           name: Publish to NPM Registry
           requires:
-            - Build Package
+            - Build & Test Package
           filters:
             branches:
               only: main
       - Publish_To_Github:
           name: Publish to Github Registry
           requires:
-            - Build Package
+            - Build & Test Package
           filters:
             branches:
               only: main
